@@ -1,5 +1,6 @@
-import { useContext, useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { AuthContext } from "./authContext";
+
 
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -74,12 +75,4 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
-};
-
-export const useAuth = () => {
-  const authContextValue = useContext(AuthContext);
-  if (!authContextValue) {
-    throw new Error("useAuth used outside of the Provider");
-  }
-  return authContextValue;
 };
