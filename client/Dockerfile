@@ -1,5 +1,5 @@
 # Use official Node.js LTS image
-FROM node:22
+FROM node:20-alpine
 
 # Set working directory
 WORKDIR /app
@@ -13,8 +13,7 @@ RUN npm install
 # Copy the rest of the source code
 COPY . .
 
+RUN npm run build
 # Expose backend port (e.g., 5000)
-EXPOSE 5000
-
-# Start the server
-CMD ["node", "server.js"]
+EXPOSE 5173
+CMD ["npm", "run", "preview"]
