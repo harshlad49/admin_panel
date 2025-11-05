@@ -1,7 +1,7 @@
-
 services:
   backend:
-    build: ./server
+    build:
+      context: ./server
     container_name: backend
     restart: always
     ports:
@@ -10,9 +10,10 @@ services:
       - ./server/.env
 
   frontend:
-    build: ./client
-    args:
-      VITE_API_URL: http://13.53.194.122:5000
+    build:
+      context: ./client
+      args:
+        VITE_API_URL: http://13.53.194.122:5000
     container_name: frontend
     restart: always
     ports:
