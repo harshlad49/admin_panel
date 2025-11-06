@@ -6,7 +6,7 @@ export const Navbar = () => {
         <header>
           <div className="container">
             <div className="logo-band">
-             <NavLink to="/">ThapaTechnical</NavLink>
+             <NavLink to="/">HD</NavLink>
             </div>
 <nav>
   <ul>
